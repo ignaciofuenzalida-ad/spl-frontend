@@ -10,7 +10,6 @@ export interface User {
     gender: string;
 }
 
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
 export interface UserDetail extends User {
     email: string;
     phoneNumber: string;

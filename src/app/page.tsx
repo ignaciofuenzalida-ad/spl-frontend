@@ -97,7 +97,7 @@ export default function Component() {
                 <p className="text-center text-gray-500 mt-4">Sin resultados</p>
             )}
 
-            <Dialog open={!!user} onOpenChange={setUser}>
+            <Dialog open={!!user} onOpenChange={() => setUser(undefined)}>
                 <DialogContent>
                     <DialogHeader>
                         <DialogTitle>
