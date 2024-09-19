@@ -19,6 +19,7 @@ import {
     DialogTitle,
     DialogDescription,
 } from '@/components/ui/dialog';
+import { Analytics } from '@vercel/analytics/react';
 
 export default function Component() {
     const [debouncedSearch, setDebouncedSearch] = useState('');
@@ -152,6 +153,7 @@ export default function Component() {
                     )}
                 </DialogContent>
             </Dialog>
+            <Analytics />
         </div>
     );
 }
