@@ -47,7 +47,7 @@ export default function Component() {
 
     return (
         <div className="container mx-auto p-4">
-            <h1 className="text-2xl font-bold mb-4">Sportife Users</h1>
+            <h1 className="text-2xl font-bold mb-4">Sportlife Users</h1>
             <div className="flex flex-col md:flex-row gap-4 mb-4">
                 <Input
                     type="text"
@@ -71,7 +71,7 @@ export default function Component() {
                 </Select>
             </div>
 
-            {isLoading && <p className="text-center">Cargando..</p>}
+            {isLoading && <p className="text-center">Loading..</p>}
             {error && <p className="text-red-500 text-center">Error: {error}</p>}
 
             <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
@@ -87,14 +87,14 @@ export default function Component() {
                             </h2>
                             <div className="flex justify-between">
                                 <p className="text-sm text-gray-500">RUT: {person.run}</p>
-                                <p className="text-sm text-gray-500">Genero: {person.gender}</p>
+                                <p className="text-sm text-gray-500">Gender: {person.gender}</p>
                             </div>
                         </CardContent>
                     </Card>
                 ))}
             </div>
             {users.length === 0 && !isLoading && (
-                <p className="text-center text-gray-500 mt-4">Sin resultados</p>
+                <p className="text-center text-gray-500 mt-4">No results</p>
             )}
 
             <Dialog open={!!user} onOpenChange={() => setUser(undefined)}>
@@ -108,7 +108,7 @@ export default function Component() {
                     {user && (
                         <div className="mt-4">
                             <p>
-                                <strong>Rut:</strong> {user.run}
+                                <strong>RUT:</strong> {user.run}
                             </p>
                             <p>
                                 <strong>Correo:</strong> {user.email}
@@ -117,7 +117,7 @@ export default function Component() {
                                 <strong>Celular:</strong> {user.phoneNumber}
                             </p>
                             <p>
-                                <strong>Sexo:</strong> {user.gender}
+                                <strong>Genero:</strong> {user.gender}
                             </p>
                             <p>
                                 <strong>Ciudad:</strong> {user.city}
@@ -137,10 +137,10 @@ export default function Component() {
                                 <strong>Plan:</strong> {user.planType || 'Sin plan'}
                             </p>
                             <p>
-                                <strong>Numero de contacto:</strong> {user.emergencyName}
+                                <strong>Nombre de emergencia:</strong> {user.emergencyName}
                             </p>
                             <p>
-                                <strong>Numero emergencia:</strong> {user.emergencyNumber}
+                                <strong>Numero de emergencia:</strong> {user.emergencyNumber}
                             </p>
                             <p>
                                 <strong>Estado civil:</strong> {user.maritalStatus}
