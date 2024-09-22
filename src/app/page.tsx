@@ -46,6 +46,8 @@ export default function Component() {
         };
     }, [debouncedSearch, setSearch]);
 
+    const isDefaultDate = user?.expirationDate === '0001-01-01T00:00:00Z';
+
     return (
         <div className="container mx-auto p-4">
             <h1 className="text-2xl font-bold mb-4">Sportlife Users</h1>
@@ -128,11 +130,17 @@ export default function Component() {
                             </p>
                             <p>
                                 <strong>Nacimiento:</strong>{' '}
-                                {new Date(user.birthDate).toLocaleDateString()}
+                                {new Date(user.birthDate).toLocaleDateString('en-US', {
+                                    timeZone: 'UTC',
+                                })}
                             </p>
                             <p>
                                 <strong>Fecha de expiracion:</strong>{' '}
-                                {new Date(user.expirationDate).toLocaleDateString()}
+                                {isDefaultDate
+                                    ? 'N/A'
+                                    : new Date(user.expirationDate).toLocaleDateString('en-US', {
+                                          timeZone: 'UTC',
+                                      })}
                             </p>
                             <p>
                                 <strong>Plan:</strong> {user.planType || 'Sin plan'}
